@@ -126,7 +126,7 @@ strong {
 }
 
 a {
-	color: #4183C4;
+	color: #0d467d;
 	text-decoration: none
 }
 
@@ -142,7 +142,7 @@ p code {
 	font-family: Consolas, "Liberation Mono", Courier, monospace
 }
 
-h2 {
+h3 {
 	text-align: center;
 	font-weight: 200;
 	line-height: 28px;
@@ -185,14 +185,18 @@ h1 {
 	line-height: 60px;
 	text-align: center;
 	max-width: 910px;
-	color: #bdc2d6
+	color: #bdc2d6;
+}
+
+.shadow-text {
+  text-shadow: 8px 8px 8px blue;
 }
 
 .page #top-part img {
 	margin-bottom: 25px
 }
 
-#shadow {
+.shadow {
 	text-align: center;
 	background-color: black;
 	overflow: hidden;
@@ -219,24 +223,6 @@ h1 {
 	border-radius: 5px;
 	text-align: center;
 	z-index: 1;
-	-webkit-transition: all 0.6s ease-in-out 0s;
-	-moz-transition: all 0.6s ease-in-out 0s;
-	-o-transition: all 0.6s ease-in-out 0s;
-	transition: all 0.6s ease-in-out 0s
-}
-
-.shadow-list .image-right p {
-	margin-left: 30px;
-	margin-right: 30px
-}
-
-.shadow-list .animate-in {
-	-webkit-transform: translateY(40px);
-	-moz-transform: translateY(40px);
-	-o-transform: translateY(40px);
-	-ms-transform: translateY(40px);
-	transform: translateY(40px);
-	opacity: 0
 }
 
 .shadow-list p {
@@ -262,18 +248,8 @@ h1 {
 	max-width: 90%
 }
 
-.shadow-list .hidden {
+.hidden {
 	display: none
-}
-
-.shadow-list .question {
-	text-align: center
-}
-
-
-.windows-download:hover {
-	color: #fff;
-	background-color: #62b30e
 }
 
 .shadow-list>li:last-child:before {
@@ -284,17 +260,6 @@ h1 {
 	height: 105%;
 	width: 10px;
 	background-color: #f5f5f5
-}
-
-.shadow-list .right {
-	margin: -45px 0 0 30px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px
-}
-
-.details {
-	font-size: 14px;
-	font-weight: 400
 }
 
 .shadow-list>li:not(.question):after {
@@ -368,11 +333,6 @@ h1 {
 
 .left {
 	float: left
-}
-
-.article-left {
-	width: 500px;
-	margin-left: 20px
 }
 
 @font-face {
