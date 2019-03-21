@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link type="text/css" href="index.css" media="all" rel="stylesheet">
+    <title>Shadow Workers</title>
+    <meta property="og:title" content="Shadow Workers">
+    <meta property="og:locale" content="en_US">
+    <meta name="description" content="Shadow Workers">
+    <meta property="og:description" content="Shadow Workers">
+    <link rel="canonical" href="https://shadow-workers.github.io/">
+    <meta property="og:url" content="https://shadow-workers.github.io/">
+    <meta property="og:site_name" content="Shadow Workers">
+  </head>
+
+  <body class="home">
+  <section id="top-part" class="top-part">
+    <img src="logo.png" alt="Shadows Workers" class="logo">
+  </section>
+
+<section id="shadow" class="shadow">
+  <h1>Shadows Workers</h1>
+</section>
+
+<section id="shadow" class="shadow">
+  <h2>TODO</h2>
+
+  <ul class="shadow-list wrapper active">
+    <li class="image-right">
+      <h4>Create a repository</h4>
+      <p>Head over to <a href="https://github.com/">GitHub</a> and <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a> named <em>username</em>.github.io, where <em>username</em> is your username (or organization name) on GitHub.</p>
+
+      <p class="details">If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.</p>
+    </li>
+
+    <li>
+      <h4>What git client are you using?</h4>
+    </li>
+
+    <li class="option-newuser">
+      <h4>Download GitHub Desktop</h4>
+      <p>GitHub Desktop is a great way to use Git and GitHub on macOS and Windows.</p>
+
+      <a class="desktop-download" href="https://desktop.github.com/"><span class="icon"></span>Download GitHub Desktop</a>
+
+      <img src="./index_files/dashboard@2x.png" width="1054" alt="GitHub Desktop screenshot" class="full-size">
+    </li>
+
+    <li class="option-terminal">
+      <h4>Clone the repository</h4>
+      <p>Go to the folder where you want to store your project, and clone the new repository:</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>git clone https://github.com/<em>username</em>/<em>username</em>.github.io</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="option-desktop image-right">
+      <h4>Clone the repository</h4>
+      <p>Click the "Set up in Desktop" button. When the GitHub desktop app opens, save the project.</p>
+
+      <p class="details">If the app doesn't open, launch it and clone the repository from the app.</p>
+    </li>
+
+    <li class="option-newuser image-right">
+      <h4>Clone the repository</h4>
+      <p>After finishing the installation, head back to GitHub.com and refresh the page. Click the "Set up in Desktop" button. When the GitHub desktop app opens, save the project.</p>
+
+      <p class="details">If the app doesn't open, launch it and clone the repository from the app.</p>
+    </li>
+
+    <li class="option-terminal">
+      <h4>Hello World</h4>
+      <p>Enter the project folder and add an index.html file:</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>cd <em>username</em>.github.io</p>
+          <p><span class="path">~</span><span class="prompt">$</span>echo "Hello World" &gt; index.html</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="option-desktop option-newuser">
+      <h4>Create an index file</h4>
+      <p>Grab your favorite text editor and add an index.html file to your project:</p>
+
+      <div class="terminal">
+        <div class="header">index.html</div>
+        <code class="shell">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;I'm hosted with Shadows Workers.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </code>
+    </div></li>
+
+    <li class="option-terminal">
+      <h4>Push it</h4>
+      <p>Add, commit, and push your changes:</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>git add --all</p>
+          <p><span class="path">~</span><span class="prompt">$</span>git commit -m "Initial commit"</p>
+          <p><span class="path">~</span><span class="prompt">$</span>git push -u origin master</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="option-desktop option-newuser hidden">
+      <h4>Commit &amp; publish</h4>
+
+      <p>Enter the repository, commit your changes, and press the publish button.</p>
+
+      <img src="./index_files/desktop-demo@2x.gif" width="841" alt="Demonstration of steps required to create the initial commit and publish the repository in GitHub Desktop" class="macos-drop-shadow">
+    </li>
+
+  </ul>
+  <!-- End of user site shadow -->
+
+  <!-- Project Site shadow -->
+  <ul id="project-site" class="shadow-list wrapper">
+    <li class="question">
+      <h4>Use a theme, or start from scratch?</h4>
+      <p>You have the option to start with one of the pre-built themes,
+        <br>or to create a site from scratch.
+      </p><ul class="tabs">
+        <li><a id="option-generate" href="https://shadow-workers.github.io/#generate-step-1" class="selected">Choose a theme</a></li>
+        <li><a id="option-vanilla" href="https://shadow-workers.github.io/#vanilla-step-1">Start from scratch</a></li>
+      </ul>
+    </li>
+
+    <li id="generate-step-1" class="option-generate">
+      <h4>Repository Settings</h4>
+      <p>Head over to <a href="https://github.com/">GitHub.com</a> and create a new repository, or go to an existing one.
+        <br><strong>Click on the Settings tab</strong>.</p>
+
+      <img src="./index_files/repo-settings@2x.png" width="720" alt="Settings for a repository">
+    </li>
+
+    <li class="option-generate">
+      <h4>Theme chooser</h4>
+      <p>Scroll down to the <strong>Shadows Workers</strong> section. Press <strong>Choose a theme</strong>.</p>
+      <img src="./index_files/launch-theme-chooser@2x.png" width="720" alt="Automatic Generator button on GitHub.com, Settings">
+    </li>
+
+    <li class="option-generate">
+      <h4>Pick a theme</h4>
+      <p>Choose one of the themes from the carousel at the top.
+      <br>When you're done, click <strong>Select theme</strong> on the right.</p>
+
+      <img src="./index_files/theme-chooser@2x.png" class="full-size" width="720" alt="Choose layout">
+    </li>
+
+    <li class="option-generate">
+      <h4>Edit content</h4>
+      <p>Use the editor to add content to your site.</p>
+      <img class="full-size" src="./index_files/code-editor@2x.png" width="720" alt="Add content to your Shadows Workers site">
+    </li>
+
+    <li class="option-generate">
+      <h4>Commit</h4>
+      <p>Enter a commit comment and click on <strong>Commit changes</strong> below the editor.</p>
+      <img class="full-size" src="./index_files/commit-edits@2x.png" width="720" alt="Commit Markdown content to your repository">
+    </li>
+
+    <!-- Start of vanilla sub shadow -->
+    <li id="vanilla-step-1" class="option-vanilla hidden">
+      <h4>Create an index file</h4>
+      <p>Head over to <a href="https://github.com/">GitHub.com</a> and <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a>, or go to an existing one.
+      <br>Click on the <strong>Create new file</strong> button.</p>
+
+      <img src="./index_files/new-create-file@2x.png" width="720" alt="Create a file in your repository">
+    </li>
+
+    <li class="option-vanilla hidden">
+      <h4>Hello World</h4>
+      <p>Name the file <code>index.html</code> and type some HTML content into the editor.</p>
+
+      <img src="./index_files/new-index-html@2x.png" width="720" alt="Hello World on GitHub.com">
+    </li>
+
+    <li class="option-vanilla hidden">
+      <h4>Commit the file</h4>
+      <p>Scroll to the bottom of the page, write a commit message, and commit the new file.</p>
+
+      <img src="./index_files/new-commit-file@2x.png" width="720" alt="Commit the file">
+    </li>
+
+    <li class="option-vanilla hidden">
+      <h4>Repository Settings</h4>
+      <p><strong>Click on the Settings tab</strong> and scroll down to the Shadows Workers section.
+      <br>Then select the <strong>master branch</strong> source and click on the <strong>Save</strong> button.</p>
+
+      <img src="index_files/source-setting@2x.png" width="720" alt="Shadows Workers Source Setting">
+    </li>
+
+  </ul>
+
+</section>
+
+<section id="next-steps">
+  <h1>GitHub Project</h1>
+</section>
+
+
+<footer class="page-footer">
+  <ul class="site-footer-links">
+    <li><span>Shadow Workers</span></li>
+  </ul>
+</footer>
+</body>
+</html>
