@@ -17,177 +17,60 @@
   </head>
 
   <body class="home">
-  <section id="top-part" class="top-part">
-    <img src="logo.png" alt="Shadow Workers" class="logo">
-  </section>
+    <section id="top-part" class="top-part">
+      <img src="logo.png" alt="Shadow Workers" class="logo">
+    </section>
 
-  <section class="shadow">
-  <h1><span class="shadow-text">Shadow</span> Workers</h1>
-  </section>
+    <section class="shadow">
+    <h1><span class="shadow-text">Shadow</span> Workers</h1>
+    </section>
 
-<section class="shadow">
-  <h3><span class="shadow-text">Shadow</span> Workers is a C2 designed to help in the exploitation of malicious Service Workers...TODO</h3>
+    <section class="shadow">
+      <h3><span class="shadow-text">Shadow</span> Workers is a C2 and proxy designed to help in the exploitation of malicious Service Workers...TODO</h3>
 
-    <ul class="shadow-list wrapper active">
-    <li>
-      <h4>Create a repository</h4>
-      <p>Head over to <a href="https://github.com/">GitHub</a> and <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a> named <em>username</em>.github.io, where <em>username</em> is your username (or organization name) on GitHub.</p>
-
-      <p class="details">If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.</p>
-    </li>
-
-    <li>
-      <h4>What git client are you using?</h4>
-    </li>
-
-    <li class="">
-      <h4>Download GitHub Desktop</h4>
-      <p>GitHub Desktop is a great way to use Git and GitHub on macOS and Windows.</p>
-      <a class="desktop-download" href="https://desktop.github.com/"><span class="icon"></span>Download GitHub Desktop</a>
-    </li>
-
-    <li>
-      <h4>Clone the repository</h4>
-      <p>Go to the folder where you want to store your project, and clone the new repository:</p>
-
-      <div class="terminal">
-        <div class="header"></div>
-        <div class="shell">
-          <p><span class="path">~</span><span class="prompt">$</span>git clone https://github.com/<em>username</em>/<em>username</em>.github.io</p>
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <h4>Clone the repository</h4>
-      <p>Click the "Set up in Desktop" button. When the GitHub desktop app opens, save the project.</p>
-
-      <p class="details">If the app doesn't open, launch it and clone the repository from the app.</p>
-    </li>
-
-    <li>
-      <h4>Clone the repository</h4>
-      <p>After finishing the installation, head back to GitHub.com and refresh the page. Click the "Set up in Desktop" button. When the GitHub desktop app opens, save the project.</p>
-
-      <p class="details">If the app doesn't open, launch it and clone the repository from the app.</p>
-    </li>
-
-    <li>
-      <h4>Hello World</h4>
-      <p>Enter the project folder and add an index.html file:</p>
-
-      <div class="terminal">
-        <div class="header"></div>
-        <div class="shell">
-          <p><span class="path">~</span><span class="prompt">$</span>cd <em>username</em>.github.io</p>
-          <p><span class="path">~</span><span class="prompt">$</span>echo "Hello World" &gt; index.html</p>
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <h4>Create an index file</h4>
-      <p>Grab your favorite text editor and add an index.html file to your project:</p>
-
-      <div class="terminal">
-        <div class="header">index.html</div>
-        <code class="shell">
-          <pre>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-&lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;p&gt;I'm hosted with Shadow Workers.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-      </code>
-    </div></li>
-
-    <li>
-      <h4>Push it</h4>
-      <p>Add, commit, and push your changes:</p>
-
-      <div class="terminal">
-        <div class="header"></div>
-        <div class="shell">
-          <p><span class="path">~</span><span class="prompt">$</span>git add --all</p>
-          <p><span class="path">~</span><span class="prompt">$</span>git commit -m "Initial commit"</p>
-          <p><span class="path">~</span><span class="prompt">$</span>git push -u origin master</p>
-        </div>
-      </div>
-    </li>
-
-    <li class="hidden">
-    </li>
-    
-  </ul>
-
-    <ul class="shadow-list">
-    <li>
-      <h4>Use a theme, or start from scratch?</h4>
-      <p>You have the option to start with one of the pre-built themes,
-        <br>or to create a site from scratch.
-      </p><ul class="tabs">
-        <li><a href="https://shadow-workers.github.io/#generate-step-1" class="selected">Choose a theme</a></li>
-        <li><a href="https://shadow-workers.github.io/#vanilla-step-1">Start from scratch</a></li>
+        <ul class="shadow-list wrapper active">
+          
+        <li>
+          <h4>Install the dependencies</h4>
+          <p>Python 3</p>
+        </li>
+        
+        <li>
+          <h4>Clone the repository</h4>
+          <p>On an host with a public IP address, go the folder where you want to store your project, clone the project and install dependencies:</p>
+          <div class="terminal">
+            <div class="header">C2 host</div>
+            <div class="shell">
+              <p>
+                <span class="prompt">$</span> git clone https://github.com/<em>shadow-workers</em>/<em>shadow-workers</em>.git<br/>
+                <span class="prompt">$</span> cd <em>shadow-workers</em></br/>
+                <span class="prompt">$</span> pip install -r requirements.txt
+              </p>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <h4>Start the C2</h4>
+          <div class="terminal">
+            <div class="header">C2 host</div>
+            <div class="shell">
+              <p>
+                <span class="prompt">$</span> ./start.sh
+              </p>
+            </div>
+          </div>
+        </li>
+          
+        <li class="hidden"></li>
+        
       </ul>
-    </li>
 
-    <li>
-      <h4>Repository Settings</h4>
-      <p>Head over to <a href="https://github.com/">GitHub.com</a> and create a new repository, or go to an existing one.
-        <br><strong>Click on the Settings tab</strong>.</p>
-    </li>
+    </section>
 
-    <li>
-      <h4>Theme chooser</h4>
-      <p>Scroll down to the <strong>Shadow Workers</strong> section. Press <strong>Choose a theme</strong>.</p>
-    </li>
+    <section>
+      <h1>GitHub Project</h1>
+    </section>
 
-    <li>
-      <h4>Pick a theme</h4>
-      <p>Choose one of the themes from the carousel at the top.
-      <br>When you're done, click <strong>Select theme</strong> on the right.</p>
-    </li>
-
-    <li>
-      <h4>Edit content</h4>
-      <p>Use the editor to add content to your site.</p>
-    </li>
-
-    <li>
-      <h4>Commit</h4>
-      <p>Enter a commit comment and click on <strong>Commit changes</strong> below the editor.</p>
-    </li>
-    
-    <li>
-      <h4>Create an index file</h4>
-      <p>Head over to <a href="https://github.com/">GitHub.com</a> and <a data-proofer-ignore="true" href="https://github.com/new">create a new repository</a>, or go to an existing one.
-      <br>Click on the <strong>Create new file</strong> button.</p>
-    </li>
-
-    <li>
-      <h4>Hello World</h4>
-      <p>Name the file <code>index.html</code> and type some HTML content into the editor.</p>
-    </li>
-
-    <li>
-      <h4>Commit the file</h4>
-      <p>Scroll to the bottom of the page, write a commit message, and commit the new file.</p>
-    </li>
-
-    <li>
-      <h4>Repository Settings</h4>
-      <p><strong>Click on the Settings tab</strong> and scroll down to the Shadow Workers section.
-      <br>Then select the <strong>master branch</strong> source and click on the <strong>Save</strong> button.</p>
-    </li>
-
-  </ul>
-
-</section>
-
-<section id="next-steps">
-  <h1>GitHub Project</h1>
-</section>
-
-</body>
+  </body>
 </html>
