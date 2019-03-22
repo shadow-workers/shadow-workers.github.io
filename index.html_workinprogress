@@ -26,18 +26,31 @@
     </section>
 
     <section class="shadow">
-      <h3><span class="shadow-text">Shadow</span> Workers is a C2 and proxy designed to help in the exploitation of malicious Service Workers...TODO</h3>
+      <h3>
+        <span class="shadow-text">Shadow</span> Workers is a C2 and proxy designed to help in the exploitation of malicious Service Workers (SW).<br/>
+        TODO
+      </h3>
 
         <ul class="shadow-list wrapper active">
-          
+        
         <li>
-          <h4>Install the dependencies</h4>
-          <p>Python 3</p>
+          <h4>Register Domain</h4>
+          <p>
+            Register a domain and point it to a Internet accessible host (C2).
+          </p>
         </li>
         
         <li>
+          <h4>Install dependencies on C2 host</h4>
+          <p>
+            Python 3<br/>
+            Nginx
+          </p>
+        </li>
+          
+        <li>
           <h4>Clone the repository</h4>
-          <p>On an host with a public IP address, go the folder where you want to store your project, clone the project and install dependencies:</p>
+          <p>On the C2 host, go the folder where you want to store your project, clone the project and install the dependencies:</p>
           <div class="terminal">
             <div class="header">C2 host</div>
             <div class="shell">
@@ -51,16 +64,132 @@
         </li>
         
         <li>
-          <h4>Start the C2</h4>
+          <h4>Configure Nginx</h4>
+          <p>On the C2 host, generate SSL/TLS certificate using <a href="https://letsencrypt.org/" target="_blank">letsencrypt</a> (or anything you prefer) and add the following to Nginx configuration:</p>
           <div class="terminal">
-            <div class="header">C2 host</div>
+            <div class="header">/etc/nginx/nginx.conf</div>
             <div class="shell">
               <p>
-                <span class="prompt">$</span> ./start.sh
+                server {<br/>
+                  listen       443 ssl;<br/>
+                  server_name  DOMAIN_REGISTERED;<br/><br/>
+
+                  ssl_certificate      PATH_TO_CERTIFICATE;<br/>
+                  ssl_certificate_key  PATH_TO_PRIVATE_KEY;<br/><br/>
+
+                  ssl_session_cache    shared:SSL:1m;<br/>
+                  ssl_session_timeout  5m;<br/><br/>
+
+                  ssl_ciphers  HIGH:!aNULL:!MD5;<br/>
+                  ssl_prefer_server_ciphers  on;<br/>
+                  location / {<br/>
+                   proxy_set_header Host $host;<br/>
+                   proxy_set_header X-Forwarded-Proto https;<br/>
+                   proxy_set_header X-Forwarded-For $remote_addr;<br/>
+                   proxy_pass http://localhost:5000;<br/>
+                  }<br/>
+              }
               </p>
             </div>
           </div>
         </li>
+        
+        <li>
+          <h4>Start C2</h4>
+          <div class="terminal">
+            <div class="header">C2 host</div>
+            <div class="shell">
+              <p>
+                <span class="prompt">$</span> sudo /etc/init.d/nginx start<br/>
+                <span class="prompt">$</span> ./start.sh<br/>
+                Credentials for dashboard<br/>
+                USERNAME: workers<br/>
+                PASSOWRD: PASSWORD
+              </p>
+            </div>
+          </div>
+          <p>Take note of the PASSWORD in the output</p>
+        </li>
+
+        <li>
+          <h4>Map C2 8888 TCP port to localhost</h4>
+          <div class="terminal">
+            <div class="header">localhost</div>
+            <div class="shell">
+              <p>
+                <span class="prompt">$</span> ssh -L 8888:localhost:8888 C2_HOST
+              </p>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <h4>Browse to C2 dashboard</h4>
+          <p>
+            In your browser, choose to use the above socks proxy in the browser preferences: socks proxy on localhost on port 8888.<br/>
+            Open a browser to the address: https://DOMAIN_REGISTERED/dashboard/<br/>
+            Use workers as username and the password from the output generated from the start.sh script to authenticate.
+          </p>
+        </li>
+        
+        <li>
+          <h4>Generate SW</h4>
+          <p>
+            Generate and copy the malicious Service Worker (SW) to be uploaded on the target application.<br/>
+            TODO - screenshot</br/>
+            Upload it against the vulnerable application.
+          </p>
+        </li>
+        
+        <li>
+          <h4>Trigger the XSS to register the SW</h4>
+          <p>
+            Generate and copy the malicious Service Worker to be uploaded on the target application.<br/>
+            TODO - screenshot
+          </p>
+        </li>
+        
+        <li>
+          <h4>Dashboard</h4>
+          <p>
+            When the victim gets the malicious SW registered on their browser, it (agent) will become available on the dashboard.<br/>
+            TODO - screenshot
+          </p>
+        </li>
+        
+        <li>
+          <h4>Proxy through agent</h4>
+          <p>
+            While a victim's agent (SW) is active, you can proxy through that agent and browse on the compromised application as the victim.<br/>
+            TODO - screenshot
+          </p>
+        </li>
+        
+        <li>
+          <h4>Execute modules</h4>
+          <p>
+            You can run post exploitation modules against the victim's agent (SW). For example, you can execute a localhost port scan.<br/>
+            TODO - screenshot
+            Note that you can also write your own post exploitation scripts. Please refer to the official documentation.
+          </p>
+        </li>
+        
+        <li>
+          <h4>Push notifications</h4>
+          <p>
+            If the victim allowed the SW to received push notifications, you can activate the agent on demand by sending a push notification.<br/>
+            TODO - screenshot
+          </p>
+        </li>
+        
+        <li>
+          <h4>DOM poisoning</h4>
+          <p>
+            TODO.<br/>
+            TODO - screenshot
+          </p>
+        </li>
+        
           
         <li class="hidden"></li>
         
