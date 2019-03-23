@@ -203,6 +203,31 @@ h1 {
   padding-bottom: 20px;
 }
 
+.conditions-list {
+	width: 60%;
+	margin-top: 20px;
+	margin-bottom: 40px
+}
+
+.conditions-list a {
+	color: #bdc2d6;
+	text-decoration: none
+}
+
+.conditions-list a:hover {
+	color: #fff;
+	text-decoration: none
+}
+
+.conditions-list>li {
+	position: relative;
+	margin: 0 0 10px 0px;
+	padding: 10px 0 10px;
+	font-size: 18px;
+	border: 1px solid #fff;
+	border-radius: 14px;
+}
+
 .shadow-list {
 	margin-top: 90px;
 	counter-reset: shadowstep;
@@ -285,7 +310,7 @@ h1 {
 }
 
 .terminal {
-	width: 700px;
+	width: 60%;
 	margin: 30px auto 0
 }
 
@@ -314,8 +339,8 @@ h1 {
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
 	font-size: 17px;
 	line-height: 28px;
-	color: #eeeb82;
-	background-color: #3d3d3d;
+	color: #ffffd9;
+	background-color: #000;
 	overflow: hidden;
 	padding: 20px;
 	margin: 0;
@@ -323,6 +348,13 @@ h1 {
 	border-bottom-right-radius: 7px;
 	text-align: left;
 	display: block
+}
+
+.shell a{
+	color: #fff
+}
+.shell a:hover{
+	color: #bdc2d6
 }
 
 .shadow-list .shell p {
