@@ -29,23 +29,25 @@
       <h3>
         <span class="shadow-text">Shadow</span> Workers is free and an open source C2 and proxy designed for penetration testers to help in the exploitation of XSS and malicious Service Workers (SW).<br/>
         A successful exploitation allows you to browse on the targeted application as the victim(s), as long as the SW (agent) is active. A victim does not have to have a browser tab open in the application for the agent to be active.<br/>
-        The following conditions need to be met in order to be able to achieve SW registration on victims' browsers (Chrome only at the moment):<br/>
+        The following conditions need to be met in order to be able to achieve SW registration on victims' browsers:<br/>
         <ul class="conditions-list wrapper active">
           <li>You have the ability to upload a JavaScript file on the application</li>
+          <li>The JavaScript file is can be accessed by other users</li>
           <li>The JavaScript file is served from the same domain of the application</li>
           <li>The JavaScript file is served with Content-Type application/javascript</li>
           <li>An XSS vulnerability exists on the application</li>
           <li class="hidden"></li>
         </ul>
-        Currently the tool supports the following features:<br/>
+        Currently, the tool supports the following:<br/>
         <ul class="conditions-list wrapper active">
           <li><a href="https://developers.google.com/web/updates/2015/12/background-sync" target="_blank">Background Sync</a></li>
           <li><a href="https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications" target="_blank">Push notifications</a></li>
           <li>DOM poisoning via <a href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker" target="_blank">fetch handler</a></li>
+          <li>Chrome browser only</a></li>
           <li class="hidden"></li>
         </ul>
-        To setup the C2 and proxy:
       </h3>
+      <h2>To setup the C2 and proxy:</h2>
 
       <ul class="shadow-list wrapper active">
         
@@ -71,8 +73,8 @@
             <div class="header">C2 host</div>
             <div class="shell">
               <p>
-                <span class="prompt">$</span> git clone https://github.com/<em>shadow-workers</em>/<em>shadow-workers</em>.git<br/>
-                <span class="prompt">$</span> cd <em>shadow-workers</em></br/>
+                <span class="prompt">$</span> git clone https://github.com/shadow-workers/shadow-workers.git<br/>
+                <span class="prompt">$</span> cd shadow-workers</br/>
                 <span class="prompt">$</span> pip install -r requirements.txt
               </p>
             </div>
@@ -81,7 +83,7 @@
         
         <li>
           <h4>Configure Nginx</h4>
-          <p>On the C2 host, generate SSL/TLS certificate using <a href="https://letsencrypt.org/" target="_blank">letsencrypt</a> (or anything you prefer) and add the following to Nginx configuration (ensure you change the domain and path to key and certificate):</p>
+          <p>On the C2 host, generate SSL/TLS certificate using <a href="https://letsencrypt.org/" target="_blank">letsencrypt</a> (or anything you prefer) and add the following to the Nginx configuration (ensure you change the domain and path to key and certificate):</p>
           <div class="terminal">
             <div class="header">/etc/nginx/nginx.conf</div>
             <div class="shell">
@@ -128,7 +130,7 @@
         </li>
 
         <li>
-          <h4>Map C2 8888 TCP port to localhost</h4>
+          <h4>Map C2 proxy port to localhost</h4>
           <p>On your local machine:</p>
           <div class="terminal">
             <div class="header">localhost</div>
@@ -143,7 +145,7 @@
         <li>
           <h4>Browse to C2 dashboard</h4>
           <p>
-            In your browser, choose to use the following socks proxy in the browser preferences: type: socks, address: 127.0.0.0, port: 8888.<br/>
+            In your browser, choose to use the following socks proxy in the browser preferences: type: socks, address: 127.0.0.1, port: 8888.<br/>
             Open a browser to the address: https://DOMAIN_REGISTERED/dashboard/<br/>
             To authenticate, provide "workers" as username and the password from the output generated from the start.sh script.
           </p>
@@ -153,6 +155,7 @@
           <h4>Generate SW</h4>
           <p>
             Generate and copy the malicious Service Worker (SW) to be uploaded on the target application.<br/>
+            This can be retrieved from the dashboard, or under https://C2_HOST/modules/sw.js<br/>
             TODO - screenshot</br/>
             Upload it against the vulnerable application.
           </p>
