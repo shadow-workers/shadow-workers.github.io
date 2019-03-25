@@ -28,9 +28,9 @@
     </section>
     
     <section class="shadow">
-      <div class="container">
-        <div class="row">
-          <div class="col-8 verticalcenter">
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-lg verticalcenter">
             <h3>
               <span class="shadow-text">Shadow</span> Workers is a free and open source C2 and proxy designed for penetration testers to help in the exploitation of XSS and malicious Service Workers (SW).<br/>
               A successful exploitation allows you to browse on the targeted application as the victim(s), as long as the SW (agent) is active. A victim does not have to have a browser tab open in the application for the agent to be active.<br/>
@@ -53,7 +53,7 @@
               </ul>
             </h3>
           </div>
-          <div class="col-4 banner">
+          <div class="col- banner">
             <img src="sw.png" />
           </div>
         </div>
@@ -226,8 +226,9 @@
           <p>
             The SW is capable of intercepting and poisoning requests made from within the scope. For more information around SW scope, please refer to <a href="https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope" target="_blank">https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope</a>.<br/>
             For example, if the SW scope is "/uploads", the SW will be able to poison requests made from "/uploads". If the application has functionality that renders HTML pages under that path, the victims' agents will wake up everytime they browse to such pages under the scope. If no functionality exists under the scope, you can attempt to trick the victims to visit a non-existing page under that path; for example, by phishing. The web server will respond with the default 404 html page, and the SW will still be able to perform DOM poisoning on that and wake up the agent.<br/>
-            Note that while the victim has a window open on the poisoned page, you can send arbitrary JS to it.<br/>
-            TODO - screenshot
+            Note that while the victim has a window open on the poisoned page, you can send arbitrary JS to it throught the console provided on the dashboard:<br/>
+            TODO - screenshot<br/>
+            You can also write your own custom DOM module to be executed as soon as the malicious script is included in the poisoned response. The dom scripts location is: app/templates/dom_modules/.
           </p>
         </li>
         
