@@ -170,6 +170,10 @@ h3 {
   color: #bdc2d6
 }
 
+h3 a {
+	color: #fff
+}
+
 .page h1.title {
 	margin-top: 25px
 }
