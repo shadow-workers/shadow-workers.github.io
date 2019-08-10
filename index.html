@@ -1,256 +1,380 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138165379-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-138165379-1');
-    </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link type="text/css" href="index.css" media="all" rel="stylesheet">
-    <title>Shadow Workers</title>
-    <meta property="og:title" content="Shadow Workers">
-    <meta property="og:locale" content="en_US">
-    <meta name="description" content="Shadow Workers">
-    <meta property="og:description" content="Shadow Workers">
-    <link rel="canonical" href="https://shadow-workers.github.io/">
-    <meta property="og:url" content="https://shadow-workers.github.io/">
-    <meta property="og:site_name" content="Shadow Workers">
-  </head>
+<!doctype html>
+<html lang="en-us">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138165379-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-138165379-1');
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link type="text/css" href="index.css" media="all" rel="stylesheet">
+  <title>Shadow Workers</title>
+  <meta property="og:title" content="Shadow Workers">
+  <meta property="og:locale" content="en_US">
+  <meta name="description" content="Shadow Workers">
+  <meta property="og:description" content="Shadow Workers">
+  <link rel="canonical" href="https://shadow-workers.github.io/">
+  <meta property="og:url" content="https://shadow-workers.github.io/">
+  <meta property="og:site_name" content="Shadow Workers">
+    <link rel="stylesheet" href="css/production.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700" rel="stylesheet"> 
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        body{
+            background-color: #fff;
+        }
+        .text-center{
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        a.default-color{
+         color:#4a5472;
+     }
+     .grid-wrapper:nth-child(even){
+        background-color: #f1f1f1;
+    }
+</style>
 
-  <body class="home">
-    <section id="top-part" class="top-part">
-      <img src="logo.png" alt="Shadow Workers" class="logo" />
-    </section>
+</head>
 
-    <section class="shadow">
-      <h1>
-        <span class="shadow-text">Shadow</span> Workers: XSS &amp; SW exploitation framework
-      </h1>
-    </section>
-    
-    <section class="shadow">
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-lg verticalcenter">
-            <h3>
-              <span class="shadow-text">Shadow</span> Workers is a free and open source C2 and proxy designed for penetration testers to help in the exploitation of XSS and malicious Service Workers (SW).<br/>
-              The project is hosted here: <a href="https://github.com/shadow-workers/shadow-workers">https://github.com/shadow-workers/shadow-workers</a><br/>
-              A successful exploitation allows you to browse on the targeted application as the victim(s), as long as the SW (agent) is active. A victim does not have to have a browser tab open in the application for the agent to be active.<br/>
-              <!--The following conditions need to be met in order to be able to achieve SW registration on victims' browsers:<br/>
-              <ul class="conditions-list">
-                <li>You have the ability to upload a JavaScript file on the application</li>
-                <li>The JavaScript file can be accessed by other users</li>
-                <li>The JavaScript file is served from the same domain of the application</li>
-                <li>The JavaScript file is served with Content-Type application/javascript</li>
-                <li>An XSS vulnerability exists on the application</li>
-                <li>The application runs over HTTPS with a valid certificate</li>
-                <li class="hidden"></li>
-              </ul>-->
-              Currently, the tool supports the following:<br/>
-              <ul class="conditions-list">
-                <li><a href="https://developers.google.com/web/updates/2015/12/background-sync" target="_blank">Background Sync</a></li>
-                <li><a href="https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications" target="_blank">Push notifications</a></li>
-                <li>DOM poisoning via <a href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker" target="_blank">fetch handler</a></li>
-                <li class="hidden"></li>
-              </ul>
-              Browsers support:<br/>
-              <ul class="conditions-list">
-                <li>Chrome: full support</li>
-                <li>Firefox: Push &amp; Fetch</li>
-                <li>Edge: Push &amp; Fetch</li>
-                <li>Opera: Background Sync &amp; Fetch</li>
-                <li class="hidden"></li>
-              </ul>
-            </h3>
-          </div>
-          <div class="col- banner">
-            <img src="sw.png" />
-          </div>
+<body>
+    <header class="align--center pt3">
+        <div class="container--lg border--bottom pb3">
+            <img class="logo mb3" src="shadow-img/logo.png">
+            <h1 class="mb2">Shadow Workers: XSS &amp; SW exploitation framework</h1>
+            <p>
+                Shadow Workers is a free and open source C2 and proxy designed for penetration testers to help in the exploitation of XSS and malicious Service Workers (SW).
+                The project is hosted here: <a href="https://github.com/shadow-workers/shadow-workers" target="_blank">https://github.com/shadow-workers/shadow-workers</a>
+                A successful exploitation allows you to browse on the targeted application as the victim(s), as long as the SW (agent) is active. A victim does not have to have a browser tab open in the application for the agent to be active.
+            </p>
         </div>
-      </div>
-    </section>
+    </header>
+    <main>
+        <div class="container pt3 mt2 text--gray align--center">
+            <p class="mb3">
+                Currently, the tool supports the following:
+            </p>
+            <div class="grid-row">
+                <a target="_blank" href="https://developers.google.com/web/updates/2015/12/background-sync" class="grid-column span-one-third mb3 default-color">
+                    <img class="illustration--small mb1" src="img/assign.svg">
+                    <p>Background Sync</p>
+                </a>
+                <a target="_blank" href="https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications" class="grid-column span-one-third mb3 default-color">
+                    <img class="illustration--small mb1" src="img/connected.svg">
+                    <p>Push notifications</p>
+                </a>
+                <a target="_blank" href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker" class="grid-column span-one-third mb3 default-color">
+                    <img class="illustration--small mb1" src="img/search.svg">
+                    <p>DOM poisoning via fetch handler</p>
+                </a>
+            </div>
+            <p class="mb3">
+                Browsers support:
+            </p>
+            <div class="grid-row" style="justify-content: center;">
+                <div class="grid-column span-one-third mb3">
+                    <img class="illustration--small mb1" src="img/vault.svg">
+                    <p>Chrome: full support</p>
+                </div>
+                <div class="grid-column span-one-third mb3">
+                    <img class="illustration--small mb1" src="img/messaging.svg">
+                    <p>Firefox: Push & Fetch</p>
+                </div>
+                <div class="grid-column span-one-third mb3">
+                    <img class="illustration--small mb1" src="img/mail.svg">
+                    <p>Edge: Push & Fetch</p>
+                </div>
+                <div class="grid-column span-one-third mb3">
+                    <img class="illustration--small mb1" src="img/mail.svg">
+                    <p>Opera: Background Sync & Fetch</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-center">To setup the C2 and proxy:</h2>
+        <div class="pt1 pb1">
+            <div class="grid-wrapper">
+                <div class="container--lg ">
+                    <div class="grid-row grid-row--center">
+                        <div class="grid-column mt3 mb2 order-2">
+                            <div class="border--bottom pb2 mb2">
+                              <h2>Register Domain</h2>
+                              <p>Register a domain and point it to an Internet facing host (C2).</p>
+                          </div>
+                        </div>
+           <div class="grid-column span-1"></div>
+           <div class="grid-column mt3 mb2 order-1">
+             <h2>Install dependencies on C2 host</h2>
+             <p class="italic text--gray mb1">Python 3</p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2">
+              <div class="terminal">
+                <div class="header">C2 host</div>
+                  <div class="shell">
+                    <p>
+                      <span class="prompt">$</span> git clone https://github.com/shadow-workers/shadow-workers.git<br>
+                      <span class="prompt">$</span> cd shadow-workers<br>
+                      <span class="prompt">$</span> pip install -r requirements.txt
+                    </p>
+                  </div>
+              </div>
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>Clone the repository</h2>
+                    <p>On the C2 host, go the folder where you want to store your project, clone the project and install the dependencies:</p>
+                </div>
 
-    <hr/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>Configure HTTPS</h2>
+                    <p>On the C2 host, generate SSL/TLS certificate using letsencrypt (or anything you prefer) and add copy the certificate (cert.pem) and key (key.pem) to the project folder:</p>
+                </div>
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2 order-1">
+              <div class="terminal">
+                <div class="header">/path/to/shadow-workers</div>
+                <div class="shell">
+                  <p>
+                    <span class="prompt">$</span> cp fullchain.pem /path/to/shadow-workers/cert.pem<br>
+                    <span class="prompt">$</span> cp secretkey.pem /path/to/shadow-workers/key.pem<br>
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2">
+              <div class="terminal">
+                <div class="header">C2 host</div>
+                <div class="shell">
+                  <p>
+                    <span class="prompt">$</span> SW_HTTPS=true start.sh<br>
+                    &nbsp;Credentials for dashboard<br>
+                    &nbsp;USERNAME: workers<br>
+                    &nbsp;PASSOWRD: PASSWORD
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>Start C2</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>Map C2 proxy port to localhost</h2>
+                    <p >On your local machine:</p>
+                </div>
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2 order-1">
+              <div class="terminal">
+                <div class="header">localhost</div>
+                <div class="shell">
+                  <p>
+                    <span class="prompt">$</span> ssh -L 8888:localhost:8888 C2_HOST
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2 class="text-center">Browse to C2 dashboard</h2>
+                    <p class="text-center">In your browser, choose to use the following socks proxy in the browser preferences: type: socks, address: 127.0.0.1, port: 8888.
+                        Open a browser to the address: https://DOMAIN_REGISTERED/dashboard/
+                    To authenticate, provide "workers" as username and the password from the output generated from the start.sh script.</p>
+                </div>
+            </div>
 
-    <section class="shadow">
-      <h2>To setup the C2 and proxy:</h2>
-      <ul class="shadow-list wrapper active">
-        
-        <li>
-          <h4>Register Domain</h4>
-          <p>
-            Register a domain and point it to an Internet facing host (C2).
-          </p>
-        </li>
-        
-        <li>
-          <h4>Install dependencies on C2 host</h4>
-          <p>
-            Python 3
-          </p>
-        </li>
-          
-        <li>
-          <h4>Clone the repository</h4>
-          <p>On the C2 host, go the folder where you want to store your project, clone the project and install the dependencies:</p>
-          <div class="terminal">
-            <div class="header">C2 host</div>
-            <div class="shell">
-              <p>
-                <span class="prompt">$</span> git clone https://github.com/shadow-workers/shadow-workers.git<br/>
-                <span class="prompt">$</span> cd shadow-workers</br/>
-                <span class="prompt">$</span> pip install -r requirements.txt
-              </p>
+        </div>  
+    </div>  
+</div>  
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2 class="text-center">Generate SW</h2>
+                    <p class="text-center">Generate and copy the malicious Service Worker (SW) to be uploaded on the target application.
+                        This can be retrieved from the dashboard, or under https://C2_HOST/modules/sw.js
+                    Upload it against the vulnerable application.</p>
+                </div>
             </div>
-          </div>
-        </li>
-        
-        <li>
-          <h4>Configure HTTPS</h4>
-          <p>On the C2 host, generate SSL/TLS certificate using <a href="https://letsencrypt.org/" target="_blank">letsencrypt</a> (or anything you prefer) and add copy the certificate (cert.pem) and key (key.pem) to the project folder:</p>
-          <div class="terminal">
-            <div class="header">/path/to/shadow-workers</div>
-            <div class="shell">
-              <p>
-                <span class="prompt">$</span> cp fullchain.pem /path/to/shadow-workers/cert.pem<br/>
-                <span class="prompt">$</span> cp secretkey.pem /path/to/shadow-workers/key.pem<br/>
-              </p>
-            </div>
-          </div>
-        </li>
-        
-        <li>
-          <h4>Start C2</h4>
-          <div class="terminal">
-            <div class="header">C2 host</div>
-            <div class="shell">
-              <p>
-                <span class="prompt">$</span> SW_HTTPS=true ./start.sh<br/>
-                &nbsp;Credentials for dashboard<br/>
-                &nbsp;USERNAME: workers<br/>
-                &nbsp;PASSOWRD: PASSWORD
-              </p>
-            </div>
-          </div>
-          <p>Take note of the PASSWORD from the output</p>
-        </li>
 
-        <li>
-          <h4>Map C2 proxy port to localhost</h4>
-          <p>On your local machine:</p>
-          <div class="terminal">
-            <div class="header">localhost</div>
-            <div class="shell">
-              <p>
-                <span class="prompt">$</span> ssh -L 8888:localhost:8888 C2_HOST
-              </p>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2 class="text-center">Trigger the XSS to register the SW</h2>
+                    <p class="text-center">Send the malicious XSS to the application and trick the users to browse to it.
+                    The XSS payload can be generated on the C2 host at: https://C2_HOST/modules/xss . Note that you can specify a "path" parameter to point to the exact location of the uploaded SW on the compromised application (ex: ?path=/uploads/1234). If you prefer, when exploiting the XSS, you can just load the JS from that location.</p>
+                </div>
             </div>
-          </div>
-        </li>
-        
-        <li>
-          <h4>Browse to C2 dashboard</h4>
-          <p>
-            In your browser, choose to use the following socks proxy in the browser preferences: type: socks, address: 127.0.0.1, port: 8888.<br/>
-            Open a browser to the address: https://DOMAIN_REGISTERED/dashboard/<br/>
-            To authenticate, provide "workers" as username and the password from the output generated from the start.sh script.
-          </p>
-        </li>
-        
-        <li>
-          <h4>Generate SW</h4>
-          <p>
-            Generate and copy the malicious Service Worker (SW) to be uploaded on the target application.<br/>
-            This can be retrieved from the dashboard, or under https://C2_HOST/modules/sw.js<br/>
-            Upload it against the vulnerable application.
-          </p>
-        </li>
-        
-        <li>
-          <h4>Trigger the XSS to register the SW</h4>
-          <p>
-            Send the malicious XSS to the application and trick the users to browse to it.<br/>
-            The XSS payload can be generated on the C2 host at: https://C2_HOST/modules/xss . Note that you can specify a "path" parameter to point to the exact location of the uploaded SW on the compromised application (ex: ?path=/uploads/1234). If you prefer, when exploiting the XSS, you can just load the JS from that location.<br/>
-          </p>
-        </li>
-        
-        <li>
-          <h4>Dashboard</h4>
-          <p>
-            When the victims visit the malicious XSS and the SWs are registered on their browsers, the agents (SW) will become available on the dashboard.<br/>
-            <img src="1.png" />
-          </p>
-        </li>
-        
-        <li>
-          <h4>Proxy through agent</h4>
-          <p>
-            While a victim's agent (SW) is active, you can proxy through that agent and browse on the compromised application as the victim.<br/>
-            <img src="2.png" /><br/>
-            <img src="3.png" /><br/>
-            Note that as soon as the agent is dormant, you will not be able to proxy any longer.
-          </p>
-        </li>
-        
-        <li>
-          <h4>Execute modules</h4>
-          <p>
-            You can run post exploitation modules against the victim's agent (SW). For example, you can execute a localhost port scan.<br/>
-            <img src="5.png" /><br/>
-            Note that you can also write your own post exploitation scripts. Please refer to the <a href="https://github.com/clod81/sw-tool/blob/master/Modules.md">official documentation for more information</a>.
-          </p>
-        </li>
-        
-        <li>
-          <h4>Push notifications</h4>
-          <p>
-            If the victim allowed the SW to received notifications, you can activate the agent on demand by sending a push notification.<br/>
-            On the dashboard. the option to deliver a push notification is only visible if the actual push registration has been received on the C2.<br/>
-            <img src="6.png" /><br/>
-            Note that a visual notification might appear on the victim's device, so use this caution.
-          </p>
-        </li>
-        
-        <li>
-          <h4>DOM poisoning</h4>
-          <p>
-            The SW is capable of intercepting and poisoning requests made from within the scope. For more information around SW scope, please refer to <a href="https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope" target="_blank">https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope</a>.<br/>
-            For example, if the SW scope is "/uploads", the SW will be able to poison requests made from "/uploads". If the application has functionality that renders HTML pages under that path, the victims' agents will wake up everytime they browse to such pages under the scope. If no functionality exists under the scope, you can attempt to trick the victims to visit a non-existing page under that path; for example, by phishing. The web server will respond with the default 404 html page, and the SW will still be able to perform DOM poisoning on that and wake up the agent.<br/>
-            Note that while the victim has a window open on the poisoned page, you can send arbitrary JS to it throught the console provided on the dashboard:<br/>
-            <img src="7.png" /><br/>
-            You can also write your own custom DOM module to be executed as soon as the malicious script is included in the poisoned response. The dom scripts location is: app/templates/dom_modules/.
-          </p>
-        </li>
-        
-        <li>
-          <h4>Contribute</h4>
-          <p>Clone to the project and submit pull requests</p>
-          <div class="terminal">
-            <div class="header">GitHub Project</div>
-            <div class="shell">
-              <p>
-                <a href="https://github.com/shadow-workers/shadow-workers">https://github.com/shadow-workers/shadow-workers</a><br/>
-                &nbsp;- Fork the project<br/>
-                &nbsp;- Create your feature branch (git checkout -b my-new-feature)<br/>
-                &nbsp;- Commit your changes (git commit -am 'Added some feature')<br/>
-                &nbsp;- Push to the branch (git push origin my-new-feature)<br/>
-                &nbsp;- Create new Pull Request
-              </p>
-            </div>
-          </div>
-        </li>
-        
-        <li class="hidden"></li>
-        
-      </ul>
 
-    </section>
-    
-  </body>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2">
+                <img src="shadow-img/dashboard.png">
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>Dashboard</h2>
+                    <p>When the victims visit the malicious XSS and the SWs are registered on their browsers, the agents (SW) will become available on the dashboard.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2 class="text-center">Proxy through agent</h2>
+                    <p class="text-center">While a victim's agent (SW) is active, you can proxy through that agent and browse on the compromised application as the victim.</p>
+                </div>
+            </div>
+            <div class="grid-column mt3 mb2">
+                <img src="shadow-img/proxy.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2">
+                <img src="shadow-img/modules.png">
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>Execute modules</h2>
+                    <p>You can run post exploitation modules against the victim's agent (SW). For example, you can execute a localhost port scan.</p>
+                    <p class="bold">Note that you can also write your own post exploitation scripts. Please refer to the official documentation for more information.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2 class="text-center">Push notifications</h2>
+                    <p class="text-center">If the victim allowed the SW to received notifications, you can activate the agent on demand by sending a push notification.<br/>
+                    On the dashboard. the option to deliver a push notification is only visible if the actual push registration has been received on the C2.</p>
+                    <p class="bold">Note that a visual notification might appear on the victim's device, so use this caution.</p>
+                </div>
+            </div>
+            <div class="grid-column mt3 mb2">
+                <img src="shadow-img/push.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2">
+                <img src="shadow-img/dom.png">
+            </div>
+            <div class="grid-column span-1"></div>
+            <div class="grid-column mt3 mb2">
+                <div class="border--bottom pb2 mb2">
+                    <h2>DOM poisoning</h2>
+                    <p>The SW is capable of intercepting and poisoning requests made from within the scope. For more information around SW scope, please refer to <a href='https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope'>https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope</a>.
+                        For example, if the SW scope is "/uploads", the SW will be able to poison requests made from "/uploads". If the application has functionality that renders HTML pages under that path, the victims' agents will wake up everytime they browse to such pages under the scope. If no functionality exists under the scope, you can attempt to trick the victims to visit a non-existing page under that path; for example, by phishing. The web server will respond with the default 404 html page, and the SW will still be able to perform DOM poisoning on that and wake up the agent.
+                    Note that while the victim has a window open on the poisoned page, you can send arbitrary JS to it throught the console provided on the dashboard:</p>
+                    <p class="bold">You can also write your own custom DOM module to be executed as soon as the malicious script is included in the poisoned response. The dom scripts location is: app/templates/dom_modules/.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrapper">
+    <div class="container--lg ">
+        <div class="grid-row grid-row--center">
+            <div class="grid-column mt3 mb2 order-2">
+                <div class="border--bottom pb2 mb2">
+                    <h2 class="text-center">Contribute</h2>
+                    <p class="text-center">Clone to the project and submit pull requests</p>
+
+                </div>
+            </div>
+            <div class="grid-column mt3 mb2">
+              <div class="terminal">
+                <div class="header">GitHub Project</div>
+                <div class="shell">
+                  <p>
+                    <a href="https://github.com/shadow-workers/shadow-workers">https://github.com/shadow-workers/shadow-workers</a><br>
+                    &nbsp;- Fork the project<br>
+                    &nbsp;- Create your feature branch (git checkout -b my-new-feature)<br>
+                    &nbsp;- Commit your changes (git commit -am 'Added some feature')<br>
+                    &nbsp;- Push to the branch (git push origin my-new-feature)<br>
+                    &nbsp;- Create new Pull Request
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</main>
+</body>
 </html>
+
